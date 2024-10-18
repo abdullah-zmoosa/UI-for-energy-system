@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Energy Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navbar-brand">MySolarSystem</div>
+            <nav>
+                <a href="#">Overview</a>
+                <a href="#">Solar Panels</a>
+                <a href="#">Inverters</a>
+                <a href="#">Batteries</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Overview</h1>
+        <p>System status in a nutshell</p>
+        <div class="dashboard">
+            <div class="card">
+                <h2>Solar Radiance</h2>
+                <canvas id="solarRadianceChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>Power Output</h2>
+                <canvas id="powerOutputChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>Energy Storage</h2>
+                <canvas id="energyStorageChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>System Health</h2>
+                <p id="system-health">Good</p>
+            </div>
+        </div>
+        <div class="panel-status">
+            <h2>Panel Status</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Enabled</th>
+                        <th>Panel</th>
+                        <th>Solar Radiance</th>
+                        <th>Output Voltage</th>
+                        <th>Output Current</th>
+                    </tr>
+                </thead>
+                <tbody id="panelStatusTable">
+                    <!-- Rows will be inserted dynamically -->
+                </tbody>
+            </table>
+            <button id="disableAll">Disable All</button>
+            <button id="enableAll">Enable All</button>
+        </div>
+        <div class="voice-control">
+            <h2>Voice Commands</h2>
+            <button id="startVoiceCommand">Start Voice Command</button>
+            <p id="voiceCommandResult">Command Result: </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
